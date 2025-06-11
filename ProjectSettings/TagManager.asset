@@ -16,8 +16,8 @@ TagManager:
   - Character
   - Wall
   - Dead
-  - 
-  - 
+  - Shield
+  - Bullet
   - 
   - 
   - 
@@ -56,4 +56,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2374580029
+    locked: 0
+  - name: UI
+    uniqueID: 1215980905
     locked: 0

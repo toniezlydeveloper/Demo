@@ -12,6 +12,7 @@ namespace UI
             AddTranslation<MenuLoadingState, LoadingPanel>();
             AddTranslation<BootstrapState, LoadingPanel>();
             AddTranslation<MenuState, MenuPanel>();
+            AddTranslation<GameState, GamePanel>();
             AddTranslation<WonState, WonPanel>();
         }
     }

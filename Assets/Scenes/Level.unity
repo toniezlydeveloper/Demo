@@ -374,6 +374,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!1001 &139717037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1195814084}
+    m_Modifications:
+    - target: {fileID: 1326435342316448430, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_Name
+      value: PostDeathVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326435342316448430, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1575
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+--- !u!1 &139717038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1326435342316448430, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+  m_PrefabInstance: {fileID: 139717037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &139717039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4973105142783823188, guid: ce3cc26dc2cffe44e986c4e66d2030f4, type: 3}
+  m_PrefabInstance: {fileID: 139717037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &142505544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1103,7 @@ MonoBehaviour:
   m_Intensity: 0.75
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: a981ba2100000000fdc57c6a91880d7c3d37898df170ac69
+  m_ApplyToSortingLayers: a981ba2100000000fdc57c6a91880d7c3d37898df170ac6969657a48
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1125,7 +1196,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6431373, b: 0.45882353, a: 1}
   m_Intensity: 25
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -6121,7 +6192,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6424743, b: 0.4575472, a: 1}
   m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -12555,7 +12626,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6424743, b: 0.4575472, a: 1}
   m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -14955,6 +15026,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1102219922}
+  - {fileID: 139717039}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1195814085
@@ -14969,6 +15041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4a4e15ebde4ddbb2ca97e3e07be407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageableRenderer: {fileID: 1195814083}
+  postHitEffectLifetime: 1
+  deathEffect: {fileID: 139717038}
   deadLayer: 9
   delay: 2.5
 --- !u!114 &1195814086
@@ -17389,7 +17464,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6431373, b: 0.45882353, a: 1}
   m_Intensity: 25
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -20877,7 +20952,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6424743, b: 0.4575472, a: 1}
   m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -21387,7 +21462,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6424743, b: 0.4575472, a: 1}
   m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -21599,7 +21674,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6431373, b: 0.45882353, a: 1}
   m_Intensity: 25
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -21758,7 +21833,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.7730202, b: 0.6556604, a: 1}
+  m_Color: {r: 1, g: 0.6424743, b: 0.4575472, a: 1}
   m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0

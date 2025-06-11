@@ -13,18 +13,25 @@ namespace Loop
 {
     public class GameStatesProvider : AStatesProvider
     {
+        [Header("General")]
+        [SerializeField] private GameObject uiParent;
+        [SerializeField] private PlayerInput input;
+        
         [Header("Level")]
+        [SerializeField] private InputActionReference pauseInput;
         [SerializeField] private VolumeProfile volumeProfile;
         [SerializeField] private Player playerPrefab;
-        [SerializeField] private PlayerInput input;
         
         [Header("Loading")]
         [SerializeField] private float minLoadingDuration;
         [Scene]
         [SerializeField] private string levelName;
+
+        private IPausePanel _pausePanel;
         
         private void Start()
         {
+            GetReferences();
             InjectListRecipes();
             AddStates();
         }
@@ -40,10 +47,14 @@ namespace Loop
             AddInitialState(new BootstrapState(input));
             AddState(new MenuLoadingState(levelName, minLoadingDuration));
             AddState(new MenuState());
-            AddState(new GameState(input, playerPrefab, volumeProfile));
+            AddState(new GameState(_pausePanel, pauseInput, input, playerPrefab, volumeProfile));
             AddState(new WonState(input));
             AddState(new GameLoadingState(levelName, minLoadingDuration));
             AddState(new ExitState());
         }
+
+        private void GetReferences() => _pausePanel = GetFromUI<IPausePanel>();
+
+        private TDependency GetFromUI<TDependency>() where TDependency : IDependency => uiParent.GetComponentInChildren<TDependency>();
     }
 }

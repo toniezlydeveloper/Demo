@@ -14,27 +14,48 @@ using Object = UnityEngine.Object;
 
 namespace Loop.States
 {
+    public interface IPausePanel : IDependency
+    {
+        void Present(PauseInfo info);
+    }
+    
+    public class PauseInfo
+    {
+        public Action TogglePauseCallback { get; set; }
+        public bool IsPaused { get; set; }
+
+        public PauseInfo(bool isPaused)
+        {
+            IsPaused = isPaused;
+        }
+    }
+    
     public class GameState : AState
     {
         private DependencyRecipe<DependencyList<AWinCondition>> _winConditions = DependencyInjector.GetRecipe<DependencyList<AWinCondition>>();
         private DependencyRecipe<CamerasInjector> _cameras = DependencyInjector.GetRecipe<CamerasInjector>();
         private DependencyRecipe<Player> _initialPlayer = DependencyInjector.GetRecipe<Player>();
-        
+
+        private InputActionReference _pauseInput;
         private VolumeProfile _volumeProfile;
+        private IPausePanel _pausePanel;
         private Player _playerPrefab;
         private PlayerInput _input;
-        private Player _player;
         
         private Quaternion _initialPlayerRotation;
         private Vector3 _initialPlayerPosition;
         private ChromaticAberration _chromaticAberration;
         private MotionBlur _motionBlur;
         private Vignette _vignette;
+        private Player _player;
+        private bool _isPaused;
         
-        public GameState(PlayerInput input, Player playerPrefab, VolumeProfile volumeProfile)
+        public GameState(IPausePanel pausePanel, InputActionReference pauseInput, PlayerInput input, Player playerPrefab, VolumeProfile volumeProfile)
         {
+            _pausePanel = pausePanel;
             _volumeProfile = volumeProfile;
             _playerPrefab = playerPrefab;
+            _pauseInput = pauseInput;
             _input = input;
         }
 
@@ -46,7 +67,7 @@ namespace Loop.States
             AssignCamera();
             GetVolumeOverrides();
             ToggleToGameCamera();
-            EnableInput();
+            ToggleInput(true);
         }
 
         public override void OnExit()
@@ -55,7 +76,23 @@ namespace Loop.States
             ResetVolumeOverrides();
         }
 
-        public override Type OnUpdate() => HasWon() ? typeof(WonState) : null;
+        public override Type OnUpdate()
+        {
+            if (GotPauseToggleInput())
+            {
+                TogglePause();
+            }
+            
+            return HasWon() ? typeof(WonState) : null;
+        }
+
+        private void TogglePause()
+        {
+            TogglePause(out bool isPaused, out float timeScale);
+            TimeHelper.SetTimeScale(timeScale);
+            NotifyAboutPauseToggle(isPaused);
+            ToggleInput(!isPaused);
+        }
 
         private void RespawnPlayer()
         {
@@ -74,11 +111,34 @@ namespace Loop.States
             StartListeningForRespawn();
         }
 
+        private bool GotPauseToggleInput() => _pauseInput.action.WasPressedThisFrame();
+
+        private void TogglePause(out bool isPaused, out float timeScale)
+        {
+            isPaused = _isPaused = !_isPaused;
+            timeScale = _isPaused ? 0f : 1f;
+        }
+
+        private void NotifyAboutPauseToggle(bool isPaused) => _pausePanel.Present(new PauseInfo(isPaused)
+        {
+            TogglePauseCallback = TogglePause
+        });
+
         private Player GetInitialPlayer() => _initialPlayer.Value;
 
         private bool HasWon() => _winConditions.Value.All(winCondition => winCondition.IsFulfilled);
 
-        private void EnableInput() => _input.actions.Enable();
+        private void ToggleInput(bool state)
+        {
+            if (state)
+            {
+                _input.actions.Enable();
+            }
+            else
+            {
+                _input.actions.Disable();
+            }
+        }
 
         private void CacheRespawnData()
         {
