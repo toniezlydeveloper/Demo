@@ -9,14 +9,14 @@ The purpose of this project is to showcase best coding and development practices
 
 ## Built-in Systems Used
 - **Grid**: for seamless level setup  
-- **Particle System, Shaders, Post Processing**: to make functionality look crisper  
+- **Particle System, Shaders, Post Processing**: to make the game look crisper  
 
 ## Base Tools
 As the base of my project, I used my own set of tools: [Internal Tools](https://github.com/toniezlydeveloper/Internal.git)
 
 ## Custom Systems Created for This Game
 - **Game Loop**: easy to track and modify  
-- **Movement System**: can be seamlessly extended  
+- **Movement System**: feels good and can be seamlessly extended  
 - **Bullet Reflection System**: extremely simple but scalable  
 - **Parallax Background**: just a nice touch  
 - **Extremely Simple "AI"**: bots that shoot bullets at regular intervals  
