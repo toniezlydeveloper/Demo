@@ -1,8 +1,10 @@
-# Project Overview
+# Dashbreaker
 
 The purpose of this project is to showcase best coding and development practices - clean architecture, modular design, and extendable systems - that I use in my work.
 
-![Project Overview](Content/Project_Overview.png)
+# Overview
+
+![Overview](Content/Overview.gif)
 
 ## External Systems Used
 - **FMOD**: advanced audio for immersive feedback  
